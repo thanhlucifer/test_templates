@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+<p><span th:utext="${info}"></span></p>
+<p th:text="${person.name}"></p>
+<p th:text="${person.age}"></p>
+<p th:text="${person.sex}"></p>
+<p th:if="${person.isMarried}">Đã kết hôn</p>
+<p th:unless="*{person.isMarried}">Chưa kết hôn</p>
+<p th:text="${person.createTime}"></p>
+<ul>
+    <li th:each="language:${person. language}" th:text="${language}"></li>
+</ul>
+<a th:href="@{/home}">Home</a>
+
+</body>
+</html>
